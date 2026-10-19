@@ -1,0 +1,17 @@
+import axios from 'axios'
+
+const apiClient = axios.create({
+  // baseURL: 'https://my-json-server.typicode.com/xavier-gasparus/real-world_vue/events',
+  baseURL: 'http://localhost:3000',
+  withCredentials: false, // This is the default
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
+})
+
+export default {
+  getEvents() {
+    return apiClient.get('/events')
+  },
+}
